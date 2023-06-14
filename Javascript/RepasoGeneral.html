@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>REPASO GENERAL</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <fieldset>
+        <table>
+            <legend>RELOJ</legend>
+            <tr>
+                <td>
+                    <div id="Horas">H</div>
+                    <div id="bHoras"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="Minutos">M</div>
+                    <div id="bMinutos"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="Segundos">S</div>
+                    <div id="bSegundos"></div>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <script>
+        function crearReloj() {
+
+            const barras = "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||";
+
+            var fecha = new Date();
+
+            var hour = fecha.getHours();
+            var min = fecha.getMinutes();
+            var seg = fecha.getSeconds();
+
+            document.getElementById('Hour').innerHTML = hora + " H";
+            document.getElementById('Min').innerHTML = min + " m";
+            document.getElementById('Sec').innerHTML = sec + " s";
+
+
+            var bHora = Barra.substring(0, hora);
+            var bMin = Barra.substring(0, min);
+            var bSec = Barra.substring(0, sec);
+
+            document.getElementById('barraHour').innerHTML = bHora;
+            document.getElementById('barraMin').innerHTML = bMin;
+            document.getElementById('barraSec').innerHTML = bSec;
+
+
+        }
+        function crearReloj() {
+            const Barra = "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+
+            setInterval(function () {
+                var fecha = new Date();
+
+                var hora = fecha.getHours();
+                var min = fecha.getMinutes();
+                var sec = fecha.getSeconds();
+
+                document.getElementById('Hour').innerHTML = hora + " H";
+                document.getElementById('Min').innerHTML = min + " m";
+                document.getElementById('Sec').innerHTML = sec + " s";
+
+
+                var bHora = Barra.substring(0, hora);
+                var bMin = Barra.substring(0, min);
+                var bSec = Barra.substring(0, sec);
+
+                document.getElementById('barraHour').innerHTML = bHora;
+                document.getElementById('barraMin').innerHTML = bMin;
+                document.getElementById('barraSec').innerHTML = bSec;
+
+            }, 1000)
+        }
+        crearReloj();
+
+    </script>
+</body>
+
+</html>

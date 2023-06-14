@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>ENTORNO CLIENTE EJ_OBJETOS_1</title>
+   <style type="text/css">
+      table, tr, td {
+        text-align: center;
+        border: 1px solid black;  
+        padding: auto;
+        margin: auto;
+        min-height: 450px;
+        min-width: 450px;     
+        }
+        * {
+         text-align: center;
+        }
+   </style>
+   
+</head>
+<body>
+   <h1>Pulse F5 para ver el Shuffle directamente en la tabla</h1>
+    <script type="text/javascript">
+
+      function Coche (marca, modelo, anyo) {
+         this.marca = marca;
+         this.modelo = modelo;
+         this.anyo = anyo;
+       }
+
+      var listaCoches = new Array(3);
+
+        listaCoches[0] = new Coche('Ferrari', 'Scaglieti','2010');
+        listaCoches[1] = new Coche('BMW', 'Z4','2010');
+        listaCoches[2] = new Coche('Seat', 'Toledo','1999');
+        listaCoches[3] = new Coche('Fiat', '500','1995');
+
+
+       function imprimirTabla(listaCoches) {
+       document.write("<table>");
+       document.write('<th>'+
+             '<tr>'+
+            '<td>Marca</td>'+
+            '<td>Modelo</td>'+
+            '<td>Anyo</td>'+
+            '</tr>'+
+            '</th>');
+
+         
+         for (i = 0; i<listaCoches.length; i++) {
+       document.write('<tr>'+
+            '<td class="marca">'+listaCoches[i].marca+'</td>'+
+            '<td class="modelo">'+listaCoches[i].modelo+'</td>'+
+            '<td class="anyo">'+listaCoches[i].anyo+'</td>'+
+            '</tr>');
+         }
+       document.write("</table>");
+       }
+       
+       function Shuffle(listaCoches) {
+         let i;
+            for(i = 0; i < listaCoches.length-1; i++) {
+           
+           let swap = listaCoches[i];
+           let j = Math.floor(Math.random()*(listaCoches.length-i))+i;
+          listaCoches[i] = listaCoches[j];
+          listaCoches[j] = swap;
+
+            }
+       }
+       Shuffle(listaCoches);
+       
+       imprimirTabla(listaCoches);
+
+    </script>
+</body>
+</html>

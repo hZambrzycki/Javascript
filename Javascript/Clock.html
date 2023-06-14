@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    function relojStart() {
+      const _ = undefined;
+      var barras = [
+        "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]", "[]"];
+      var date = new Date();
+      var hours = date.getHours();
+      var min = date.getMinutes();
+      var sec = date.getSeconds();
+
+      hours = Zero(hours);
+      min = Zero(min);
+      sec = Zero(sec);
+
+      var contHours = barras.slice(_, hours)
+      var contMin = barras.slice(_, min);
+      var contSec = barras.slice(_, sec);
+
+      document.getElementById("1").innerHTML = hours + " h " + contHours;
+      document.getElementById("2").innerHTML = min + " m " + contMin;
+      document.getElementById("3").innerHTML = sec + " s " + contSec;
+
+      var hours = setTimeout(function () {
+        relojStart();
+      }, 1000);
+    }
+
+    function Zero(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+  </script>
+</head>
+
+<body onload="relojStart()">
+  <div id="reloj">
+    <div id="1"></div>
+    <div id="2"></div>
+    <div id="3"></div>
+  </div>
+</body>
+
+</html>

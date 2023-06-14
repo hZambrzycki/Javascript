@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ejercicio 4 JS Formulario</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        table {
+            border: 1px solid black;
+            margin: auto;
+            width: 320px;
+            height: 200px;
+        }
+
+        * {
+            text-align: center;
+            vertical-align: top;
+        }
+
+        td {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        <table>
+            <th>Cliente</th>
+            <tr>
+                <td>Nombre y apellidos</td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td>Direccion</td>
+                <td><input type="text" id="location"></td>
+            </tr>
+            <tr>
+                <td>Codigo Postal</td>
+                <td><input type="text" id="codPos"></td>
+            </tr>
+            <tr>
+                <td>Pais</td>
+                <td><input type="text" id="pais"></td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <table>
+            <th>Pedido</th>
+            <tr>
+                <td>Modelo</td>
+                <td><input type="text" id="modelo"></td>
+            </tr>
+
+            <td>Talla:</td>
+            <tr>
+            <tr>
+                <td>
+                    <input type="radio" name="talla" id="S" value="S">S
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="talla" id="M" value="M">M
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="talla" id="L" value="L">L
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="talla" id="XL" value="XL">XL
+                </td>
+            </tr>
+            </tr>
+            <tr>
+                <td>Cantidad</td>
+                <td><input type="text" id="cantidad"></td>
+            </tr>
+        </table>
+        <br>
+        <button type="submit" onclick="realizarPedido()">Realizar Pedido</button>
+        <button onclick="xd()">Anular Pedido</button>
+    </form>
+
+    <script>
+
+        function realizarPedido() {
+            var name = document.getElementById('name').value;
+            var dir = document.getElementById("location").value;
+            var cod = document.getElementById("codPos").value;
+            var pais = document.getElementById("pais").value;
+
+
+            var modelo = document.getElementById("modelo").value;
+            var talla = document.querySelector('input[type="radio"]:checked').value;
+            var cantidad = document.getElementById("cantidad").value;
+
+            alert("Nombre y apellidos: " + name + "\n" +
+            "Direccion: "+ dir + "\n" + 
+            "Codigo Postal: " +cod + "\n" + 
+            "Pais: " + pais +"\n" +
+            "Talla: "+talla+"\n"+
+            "Modelo: "+modelo+"\n"+
+            "Cantidad: "+cantidad+"\n");
+        }
+    </script>
+</body>
+
+</html>

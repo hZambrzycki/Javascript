@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>REPASO GENERAL</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Mueva el cursor por dentro y fuera de la imagén</h1>
+    <img id="img" src="luna.jpg" onmouseover="changeImg()" onmouseout="changeImg1()" width="300px" height="300px">
+
+    <br>
+
+
+    <h1>Introduzca un texto en este campo</h1>
+    <input type="text" id="texto" onkeypress="this.value=value.toUpperCase()">
+
+    <br>
+
+
+    <h1>Formulario Radios</h1>
+
+    <fieldset>
+        <table>
+            <legend>Cliente</legend>
+            <tr>
+                <td>Nombre y apellidos</td>
+                <td><input type="text" id="name" placeholder="Nombre y apellidos" required></td>
+            </tr>
+            <tr>
+                <td>Direccion</td>
+                <td><input type="text" id="dir"></td>
+            </tr>
+            <tr>
+                <td>Codigo Postal</td>
+                <td><input type="number" min="00000" max="99999" id="cod"></td>
+            </tr>
+            <tr>
+                <td>Pais</td>
+                <td><input type="text" value="España" readonly id="pais"></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <table>
+            <legend>Pedido</legend>
+            <tr>
+                <td>Modelo</td>
+                <td><input type="text" value="Road 66" id="model" readonly></td>
+            </tr>
+            <tr>
+                <td>Talla</td>
+            </tr>
+            <tr>
+                <label>
+                    <td><input class="radio" type="radio" value="L" name="tallas">L</td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <td><input class="radio" type="radio" value="M" name="tallas">M</td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <td><input class="radio" type="radio" value="S" name="tallas">S</td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <td><input class="radio" type="radio" value="XL" name="tallas">XL</td>
+                </label>
+            </tr>
+            <tr>
+                <td>Cantidad</td>
+                <td><input type="number" id="cantidad" min="0" max="6"></td>
+            </tr>
+        </table>
+
+    </fieldset>
+    <table>
+        <tr>
+            <td>
+                <input type="button" value="Realizar Pedido" onclick="realizarPedido()">
+            </td>
+            <td>
+                <input type="button" value="Anular Pedido" onclick="anularPedido()">
+            </td>
+        </tr>
+    </table>
+
+
+    <br>
+
+
+
+    <h1>Formulario Slider</h1>
+
+    <fieldset>
+        <table>
+            <legend>Cliente</legend>
+            <tr>
+                <td>Nombre y apellidos</td>
+                <td><input type="text" id="name" placeholder="Nombre y apellidos" required></td>
+            </tr>
+            <tr>
+                <td>Direccion</td>
+                <td><input type="text" id="dir"></td>
+            </tr>
+            <tr>
+                <td>Codigo Postal</td>
+                <td><input type="number" min="00000" max="99999" id="cod"></td>
+            </tr>
+            <tr>
+                <td>Pais</td>
+                <td><input type="text" value="España" readonly id="pais"></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <table>
+            <legend>Pedido</legend>
+            <tr>
+                <td>Modelo</td>
+                <td><input type="text" value="Road 66" id="model" readonly></td>
+            </tr>
+            <tr>
+                <td>Talla</td>
+            </tr>
+            <tr>
+                <label>
+                    <td><input class="radio" type="radio" value="L" name="tallas">L</td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <td><input class="radio" type="radio" value="M" name="tallas">M</td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <td><input class="radio" type="radio" value="S" name="tallas">S</td>
+                </label>
+            </tr>
+            <tr>
+                <label>
+                    <td><input class="radio" type="radio" value="XL" name="tallas">XL</td>
+                </label>
+            </tr>
+            <tr>
+                <td>Cantidad</td>
+                <td><input type="number" id="cantidad" min="0" max="6"></td>
+            </tr>
+        </table>
+
+    </fieldset>
+    <table>
+        <tr>
+            <td>
+                <input type="button" value="Realizar Pedido" onclick="realizarPedido()">
+            </td>
+            <td>
+                <input type="button" value="Anular Pedido" onclick="anularPedido()">
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <fieldset>
+        <table>
+            <legend>Calculadora</legend>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Introduce el primer numero</td>
+            </tr>
+            <tr>
+                <td><input type="number" id="num1"></td>
+            </tr>
+            <tr>
+                <td>Introduce el segundo numero</td>
+            </tr>
+            <tr>
+                <td><input type="number" id="num2"></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="+" id="suma" onclick="sumar()">
+                    <input type="button" value="-" id="resta" onclick="restar()">
+                    <input type="button" value="/" id="division" onclick="dividir()">
+                    <input type="button" value="%" id="modulo" onclick="modulo()">
+                    <input type="button" value="X" id="multiplicar" onclick="multiplicar()">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Resultado</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Resultado" id="resultado" readonly>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <table>
+            <legend>Reloj</legend>
+            <tr>
+                <td>Horas</td>
+                <td>
+                    <div>
+                        <p id="Hour"></p>
+                        <p id="barraHour"></p>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Minutos</td>
+                <td>
+                    <div>
+                        <p id="Min"></p>
+                        <p id="barraMin"></p>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Segundos</td>
+                <td>
+                    <div>
+                        <p id="Sec"></p>
+                        <p id="barraSec"></p>
+                    </div>
+
+                </td>
+
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <script>
+        function changeImg() {
+            document.getElementById("img").src = "luna.png";
+
+        }
+        function changeImg1() {
+            document.getElementById("img").src = "luna.jpg";
+        }
+        function realizarPedido() {
+            var name = document.getElementById("name").value;
+            var dir = document.getElementById("dir").value;
+            var cod = document.getElementById("cod").value;
+            var pais = document.getElementById("pais").value;
+
+            var modelo = document.getElementById("model").value;
+            var tallas = document.querySelector('input[type="radio"]:checked').value;
+
+
+            alert("Name : " + name + "\n" +
+                "Direction :" + dir + "\n" +
+                "Postal Code :" + cod + "\n" +
+                "Pais :" + pais + "\n" +
+                "Modelo :" + modelo + "\n" +
+                "Talla :" + tallas + "\n");
+
+
+        }
+        function anularPedido() {
+            var name = document.getElementById("name").value = "";
+            var dir = document.getElementById("dir").value = "";
+            var cod = document.getElementById("cod").value = "";
+            var pais = document.getElementById("pais").value = "";
+
+            var modelo = document.getElementById("model").value = "";
+            var tallas = document.querySelector('input[type="radio"]:checked').value = document.querySelector('input[type="radio"]:checked').checked = false;
+            var cantidad = document.getElementById("cantidad").value = "";
+        }
+        function sumar() {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+
+            var suma = parseFloat(num1) + parseFloat(num2);
+
+            document.getElementById("resultado").value = suma;
+        }
+        function restar() {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+
+            var suma = parseFloat(num1) - parseFloat(num2);
+
+            document.getElementById("resultado").value = suma;
+        }
+        function dividir() {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+
+            var suma = parseFloat(num1) / parseFloat(num2);
+
+            document.getElementById("resultado").value = suma;
+        }
+        function multiplicar() {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+
+            var suma = parseFloat(num1) * parseFloat(num2);
+
+            document.getElementById("resultado").value = suma;
+        }
+        function modulo() {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+
+            var suma = parseFloat(num1) % parseFloat(num2);
+
+            document.getElementById("resultado").value = suma;
+        }
+
+        function crearReloj() {
+            const Barra = "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+
+            setInterval(function () {
+                var fecha = new Date();
+
+                var hora = fecha.getHours();
+                var min = fecha.getMinutes();
+                var sec = fecha.getSeconds();
+
+                document.getElementById('Hour').innerHTML = hora + " H";
+                document.getElementById('Min').innerHTML = min + " m";
+                document.getElementById('Sec').innerHTML = sec + " s";
+
+
+                var bHora = Barra.substring(0, hora);
+                var bMin = Barra.substring(0, min);
+                var bSec = Barra.substring(0, sec);
+
+                document.getElementById('barraHour').innerHTML = bHora;
+                document.getElementById('barraMin').innerHTML = bMin;
+                document.getElementById('barraSec').innerHTML = bSec;
+
+            }, 1000)
+        }
+        crearReloj();
+    </script>
+</body>
+
+</html>
